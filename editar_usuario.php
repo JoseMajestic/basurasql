@@ -7,7 +7,7 @@ if (!$id) {
 }
 
 try {
-    $stmt = $pdo->prepare('SELECT id, nome, email FROM users WHERE id = :id');
+    $stmt = $pdo->prepare('SELECT id, nome, email, data_nacemento FROM users WHERE id = :id');
     $stmt->execute([':id' => $id]);
     $usuario = $stmt->fetch();
     if (!$usuario) {
@@ -28,12 +28,17 @@ require_once __DIR__ . '/includes/head.php';
         <label for="nome">Nome completo</label>
         <input type="text" name="nome" id="nome" value="<?= htmlspecialchars($usuario['nome']) ?>" required>
 
+        <div class="form-row">
+            <label for="data_nacemento">Data nacemento</label>
+            <input type="date" name="data_nacemento" id="data_nacemento" value="<?= htmlspecialchars($usuario['data_nacemento'] ?? '') ?>">
+        </div>
+
         <label for="email">Correo electrónico</label>
         <input type="email" name="email" id="email" value="<?= htmlspecialchars($usuario['email']) ?>" required>
 
-        <div style="display:flex;gap:0.75rem;">
-            <button class="btn btn-primary" type="submit">Actualizar</button>
-            <a class="btn btn-outline" href="/index.php">Volver</a>
+        <div style="display:flex;gap:0.5rem;">
+            <button class="btn-simple" type="submit">Actualizar</button>
+            <a class="btn-simple btn-muted" href="/index.php">Volver</a>
         </div>
     </form>
 </section>

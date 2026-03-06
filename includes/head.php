@@ -22,61 +22,68 @@ if (!isset($pageTitle)) {
             font-family: 'Times New Roman', Georgia, serif;
             background: #fff;
             color: var(--ink);
-            padding: 2rem 1rem 3rem;
+            padding: 1.5rem 0.5rem 2.5rem;
         }
         header {
-            max-width: 960px;
+            max-width: 880px;
             margin: 0 auto;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.5rem;
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: baseline;
-            gap: 1.5rem;
+            gap: 1rem;
         }
         header h1 {
-            font-size: 2.1rem;
+            font-size: 1.85rem;
             margin: 0;
         }
         nav a {
             text-decoration: none;
             color: var(--accent);
             font-weight: bold;
-            margin-right: 1rem;
+            margin-right: 0.75rem;
+            padding: 0.15rem 0.4rem;
+            border: 1px solid transparent;
+        }
+        nav a.btn-slim {
+            border-color: var(--accent);
+            border-radius: 4px;
+            font-size: 0.95rem;
         }
         nav a:hover {
             text-decoration: underline;
         }
         main {
-            max-width: 960px;
+            max-width: 880px;
             margin: 0 auto;
         }
         h2 {
-            font-size: 2rem;
-            margin-top: 0;
+            font-size: 1.5rem;
+            margin: 0 0 0.4rem;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 1.05rem;
+            font-size: 0.98rem;
         }
         th, td {
-            padding: 0.6rem;
+            padding: 0.45rem 0.35rem;
             border-bottom: 1px solid #dcdcdc;
             text-align: left;
         }
         th {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
         }
         .actions {
             display: flex;
-            gap: 0.6rem;
+            gap: 0.4rem;
         }
         .icon-link {
             color: var(--accent);
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
         }
         .icon-link:hover {
             color: #0410a8;
@@ -87,33 +94,46 @@ if (!isset($pageTitle)) {
             background: #f8f8f8;
             margin: 1rem 0;
         }
-        form label {
-            display: block;
-            font-weight: bold;
+        form {
             margin-top: 0.5rem;
         }
+        form label {
+            display: inline-block;
+            font-weight: bold;
+            min-width: 150px;
+            margin: 0.3rem 0;
+        }
         form input {
-            width: 100%;
-            padding: 0.5rem;
+            width: 220px;
+            padding: 0.35rem;
             border: 1px solid var(--border);
             font-family: inherit;
-            font-size: 1rem;
+            font-size: 0.95rem;
+        }
+        .form-row {
+            margin-bottom: 0.4rem;
         }
         button,
-        .btn-link {
+        .btn-link,
+        .btn-simple {
             font-family: 'Times New Roman', Georgia, serif;
-            font-size: 1rem;
-            padding: 0.4rem 0.9rem;
-            background: var(--accent);
-            color: #fff;
-            border: none;
+            font-size: 0.95rem;
+            padding: 0.35rem 0.85rem;
+            border: 1px solid var(--border);
+            background: #fafafa;
+            color: var(--ink);
             cursor: pointer;
-            margin-top: 1rem;
+            margin-top: 0.6rem;
             text-decoration: none;
             display: inline-block;
+            border-radius: 4px;
         }
-        .btn-secondary {
-            background: #444;
+        .btn-simple:hover {
+            background: #f0f0f0;
+        }
+        .btn-muted {
+            border-color: transparent;
+            color: var(--muted);
         }
     </style>
 </head>
@@ -122,7 +142,7 @@ if (!isset($pageTitle)) {
     <h1>Usuarios rexistrados</h1>
     <nav>
         <a href="/index.php">Inicio</a>
-        <a href="/crear.php">Novo rexistro</a>
+        <a class="btn-slim" href="/crear.php">Novo rexistro</a>
     </nav>
 </header>
 <main>
